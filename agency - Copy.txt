@@ -1,0 +1,2 @@
+agency_url,agency_name,agency_timezone,agency_id,agency_lang
+https://www.ridebustang.com/,Colorado Department of Transportation,America/Denver,CDOT,en

@@ -1,0 +1,17 @@
+# Ignore node modules
+node_modules/
+
+# Python cache
+__pycache__/
+
+# Environment files
+.env
+.env.*
+
+# IDE / editor settings
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,256 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.app-header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.connection-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #95a5a6;
+}
+
+.status-indicator.connected {
+  background-color: #27ae60;
+  animation: pulse 2s infinite;
+}
+
+.status-indicator.error {
+  background-color: #e74c3c;
+}
+
+.status-indicator.disconnected {
+  background-color: #f39c12;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.app-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 320px;
+  background-color: #ecf0f1;
+  border-right: 1px solid #bdc3c7;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.map-container {
+  flex: 1;
+  position: relative;
+}
+
+/* Filter Panel Styles */
+.filter-panel {
+  padding: 1.5rem;
+  border-bottom: 1px solid #bdc3c7;
+}
+
+.filter-panel h3 {
+  margin: 0 0 1rem 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.filter-group {
+  margin-bottom: 1.5rem;
+}
+
+.filter-group h4 {
+  margin: 0 0 0.5rem 0;
+  color: #34495e;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkbox-item input[type="checkbox"] {
+  margin: 0;
+}
+
+.checkbox-item label {
+  font-size: 0.9rem;
+  color: #2c3e50;
+  cursor: pointer;
+}
+
+.route-filters {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+/* Status Panel Styles */
+.status-panel {
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.status-panel h3 {
+  margin: 0 0 1rem 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.stat-number.active { color: #27ae60; }
+.stat-number.ghost { color: #e74c3c; }
+.stat-number.anomaly { color: #f39c12; }
+.stat-number.total { color: #3498db; }
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.legend {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.legend h4 {
+  margin: 0 0 0.75rem 0;
+  color: #2c3e50;
+  font-size: 0.9rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
+}
+
+.legend-dot.active {
+  background-color: #27ae60;
+}
+
+.legend-dot.ghost {
+  background-color: #e74c3c;
+  animation: pulse 1.5s infinite;
+}
+
+.legend-dot.anomaly {
+  background-color: #f39c12;
+}
+
+.legend-text {
+  font-size: 0.85rem;
+  color: #2c3e50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-content {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    max-height: 40vh;
+  }
+  
+  .app-header {
+    padding: 0.75rem 1rem;
+  }
+  
+  .app-header h1 {
+    font-size: 1.25rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .stat-card {
+    padding: 0.75rem;
+  }
+  
+  .stat-number {
+    font-size: 1.25rem;
+  }
+}

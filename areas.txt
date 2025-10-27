@@ -1,0 +1,18 @@
+area_id,area_name
+denver_bustang,Denver
+csprings,Colorado Springs
+berthoud,Berthoud Mobility Hub
+frisco,Fricso
+natl_park,Rocky Mountain National Park
+idahospgs,Idaho Springs
+parachute,Parachute
+monument,Monument Park and Ride
+eagle,Eagle
+glenwood,Glenwood Springs
+firestonelongmont,Firestone-Longmont Mobility Hub
+ftcollins,Ft. Collins
+woodmen,Woodmen Park and Ride
+grandjct,Grand Junction
+ski_area,Ski Area
+rifle,Rifle
+centerraloveland,Centerra Loveland Mobility Hub
