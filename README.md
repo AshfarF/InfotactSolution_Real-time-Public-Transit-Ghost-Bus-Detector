@@ -310,5 +310,3 @@ For questions, issues, or contributions:
 - Review API documentation at `/docs`
 
 ---
-
-**Built with ❤️ for better public transit experiences**
